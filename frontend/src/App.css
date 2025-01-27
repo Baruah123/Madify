@@ -1,0 +1,245 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #56AB2F, #A8E063); /* Elegant gradient background */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
+}
+
+/* App Container */
+.app-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Wrapper */
+.todo-wrapper {
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white for a glassmorphism effect */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 600px;
+  transition: transform 0.3s ease;
+}
+
+.todo-wrapper:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Title */
+.todo-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2C7A7B;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Title shadow */
+}
+
+/* Features Section */
+.features {
+  margin-bottom: 30px;
+}
+
+.features-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2C7A7B;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.features-list {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.features-list li {
+  margin-bottom: 10px;
+}
+
+/* Input Section */
+.task-input-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.task-input {
+  flex-grow: 1;
+  padding: 14px;
+  border: 2px solid #D9E4CD;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  background: #F8F9FA;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Input shadow for depth */
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.task-input:focus {
+  border-color: #56AB2F;
+  outline: none;
+  transform: scale(1.05); /* Slight zoom effect when focused */
+}
+
+.add-task-button {
+  background-color: #56AB2F;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-task-button:hover {
+  background-color: #3D8F1F;
+  transform: scale(1.05);
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.filter-button {
+  padding: 12px 25px;
+  border-radius: 12px;
+  border: 2px solid #D9E4CD;
+  background-color: #F8F9FA;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+
+.filter-button.active-filter {
+  background-color: #56AB2F;
+  color: #fff;
+  border-color: #56AB2F;
+}
+
+.filter-button:hover {
+  background-color: #4A9A1F;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #E0E0E0;
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-in-out forwards; /* Task fade-in animation */
+}
+
+.task-details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.task-checkbox:checked {
+  transform: scale(1.2); /* Checkboxes scale when checked */
+}
+
+.task-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.task-title:hover {
+  transform: scale(1.05); /* Hover effect on task title */
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-task-button {
+  background: none;
+  color: #E74C3C;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-task-button:hover {
+  color: #C0392B;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-wrapper {
+    padding: 20px;
+  }
+
+  .task-input {
+    font-size: 0.9rem;
+  }
+
+  .add-task-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .filter-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
